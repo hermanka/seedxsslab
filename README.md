@@ -21,3 +21,6 @@ localhost:3203 -> wwww.example32c.com
 localhost:3206 -> wwww.example60.com
 
 localhost:3207 -> wwww.example70.com
+
+
+https://gist.github.com/hermanka/80383d09416e96a8c4be6425e719d355
