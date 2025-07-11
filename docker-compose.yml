@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+    elgg:
+        build: ./www
+        image: seed-xss-www
+        container_name: elgg-10.9.0.5
+        tty: true
+        # command: sh -c "mv /var/www/elgg/* /var/www/html"
+        ports: 
+            - "8008:80"
+            - "3201:3201"
+            - "3202:3202"
+            - "3203:3203"
+            - "3206:3206"
+            - "3207:3207"
+        links:
+            - seed-xss-db
+        networks:
+            - default
+
+    seed-xss-db:
+        image: mysql:8.0.22
+        container_name: seed-xss-db
+        # command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_DATABASE: elgg_seed
+            MYSQL_ROOT_PASSWORD: dees
+            MYSQL_USER: seed
+            MYSQL_PASSWORD: dees
+        tty: true
+        cap_add:
+                - SYS_NICE  # CAP_SYS_NICE (supress an error message)
+        volumes:
+              - ./db/elgg.sql:/docker-entrypoint-initdb.d/elgg.sql
+        networks:
+            - default
