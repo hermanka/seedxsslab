@@ -8,3 +8,16 @@ Attention! Don't upload on production server, or you know all the risks.
 ```
 
 Visit the http://localhost:8008 in web browser
+
+
+Lab tasks
+
+localhost:3201 -> wwww.example32a.com
+
+localhost:3202 -> wwww.example32b.com
+
+localhost:3203 -> wwww.example32c.com
+
+localhost:3206 -> wwww.example60.com
+
+localhost:3207 -> wwww.example70.com
